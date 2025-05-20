@@ -52,13 +52,14 @@ for task in range(n_tasks):
 
 n_ex = np.array(n_ex)
 train_x =  train_x[1:, :]
-train_y = train_y[1:, np.newaxis]
+train_y = train_y[1 :, np.newaxis]
+  
 
 test_x = np.zeros((1, n_predictors))
 test_y = np.zeros(1)
 
 #---------------------------------------------------------------
-#Generate test tasks
+ 
 #---------------------------------------------------------------
 
 for task in range(n_test_tasks):

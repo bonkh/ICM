@@ -123,6 +123,7 @@ def full_search(train_x, train_y, valid_x, valid_y, n_ex, n_ex_valid,
         return [np.array(s) for s in accepted_sets[-return_n_best:]]
     else:
         return np.array(best_subset)
+ 
 
 def greedy_search(train_x, train_y, valid_x, valid_y, n_ex, n_ex_valid, 
                   use_hsic, alpha, inc = 0.0):
@@ -146,7 +147,7 @@ def greedy_search(train_x, train_y, valid_x, valid_y, n_ex, n_ex_valid,
 
     pow_2 = np.array([2**i for i in np.arange(num_predictors)])
 
-    ind = 0
+    ind = 0 
     prev_stat = 0
 
     bins = []

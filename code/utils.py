@@ -13,18 +13,14 @@ import sys
 import time
 
 from sklearn import linear_model
-from sklearn import svm
-from sklearn import cross_validation
-from sklearn.cross_validation import KFold
+from sklearn.model_selection import KFold
+import matplotlib.pyplot as plt
 from matplotlib import pyplot as pl
-from matplotlib import rc
-import matplotlib as mpl
 
-from sklearn.neighbors import KernelDensity
-from sklearn.cross_validation import KFold
+
 import os
 
-import cPickle as pickle
+import pickle
 import picos as pic
 from cvxopt import matrix, solvers
 

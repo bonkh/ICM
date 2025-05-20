@@ -2,7 +2,6 @@
 import sys
 sys.path.append('../code')
 import numpy as np
-from scipy import io
 from sklearn import linear_model
 import matplotlib.pyplot as plt
 import argparse
@@ -15,7 +14,7 @@ import plotting
 
 import timeit
 
-import cPickle as pickle
+import pickle
 import os
 
 np.random.seed(1234)
@@ -102,8 +101,8 @@ color_dict, markers, legends = utils.get_color_dict()
 for m in methods:
   results[m]  = np.zeros((n_repeat, n_train_tasks.size))
 
-for rep in xrange(n_repeat):
-  print rep 
+for rep in range(n_repeat):
+  print (rep) 
   x_train, y_train = dataset.resample(n_task, n)
 
   x_test = dataset.test['x_test']

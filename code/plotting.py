@@ -1,16 +1,8 @@
-#!/usr/bin/env python
-# Copyright (c) 2014 - 2018  Mateo Rojas-Carulla  [mrojascarulla@gmail.com]
-# All rights reserved.  See the file COPYING for license terms.
-
 import numpy as np
-from sklearn import linear_model
 import matplotlib.pyplot as plt
 from matplotlib import rc
 
-import data
-import subset_search
-import utils
-import cPickle as pickle
+import pickle
 
 import sys, os
 
@@ -493,6 +485,6 @@ if __name__ == '__main__':
     for f in os.listdir(save_dir):
       if f.split('.')[-1] != 'pkl':
           continue
-      print os.path.join(save_dir, f)
+      print (os.path.join(save_dir, f))
       fn(os.path.join(save_dir, f))
 

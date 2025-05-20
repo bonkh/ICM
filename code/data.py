@@ -36,8 +36,8 @@ def draw_cov(p):
     cov = wishart.rvs(df=p, scale=scale)
 
   #Normalize covariance matrix
-  for i in xrange(p):
-    for j in xrange(p):
+  for i in range(p):
+    for j in range(p):
       if i == j: continue
       cov[i,j] = cov[i,j]/np.sqrt(cov[i,i]*cov[j,j])
 
@@ -69,7 +69,7 @@ def covs_all(n_task, p_s, p_n, mask = None):
 
       ref = draw_cov(fix)
   
-  for k in xrange(n_task):
+  for k in range(n_task):
     cov_s.append(draw_cov(p_s))
     cov_n_k = draw_cov(p_n)
 
@@ -105,7 +105,7 @@ def covs_all(n_task, p_s, p_n, mask = None):
 
 def coefs_all(n_task, p_n, p_conf, lambd, beta_0, gamma_0, mask = None):
   beta, gamma = [], []
-  for k in xrange(n_task):
+  for k in range(n_task):
     gamma.append(gen_coef(gamma_0, lambd, mask = mask))
     beta.append(gen_coef(beta_0, lambd))
   return gamma, beta
@@ -124,7 +124,7 @@ def draw_tasks(n_task, n, params):
   g = params['g']
   x, y, n_ex = [], [], []
 
-  for k in xrange(n_task):
+  for k in range(n_task):
     xs_k    = (gen_gauss(mu_s, cov_s[k], n))
     eps_draw = gen_noise((n,1))
     y_k     = np.dot(xs_k, alpha) + eps*eps_draw
